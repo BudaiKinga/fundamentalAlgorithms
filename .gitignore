@@ -1,0 +1,14 @@
+**/target
+
+**/.idea
+**/.idea_modules/
+**/*.iws
+**/*.iml
+**/*.ipr
+
+**/.settings
+**/.metadata
+**/.classpath
+**/.project
+
+**/.DS_Store
