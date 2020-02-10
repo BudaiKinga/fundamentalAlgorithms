@@ -89,13 +89,15 @@ public class DepthFirstSearch
         while(!stack.empty())
         {
             int current = stack.pop();
-            System.out.println("node: " + current);
+            if (!visited.contains(current)) {
+                visited.add(current);
+                System.out.println("node: " + current);
+            }
             List<Integer> neighb = getNeighbours(current, adj);
             for (Integer node : neighb)
             {
                 if (!visited.contains(node))
                 {
-                    visited.add(node);
                     stack.push(node);
                 }
             }
