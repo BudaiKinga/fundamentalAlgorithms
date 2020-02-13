@@ -13,4 +13,11 @@ public class Pair {
         this.v = v;
     }
 
+    @Override
+    public String toString() {
+        return "Pair{" +
+                "u=" + u +
+                ", v=" + v +
+                '}';
+    }
 }
