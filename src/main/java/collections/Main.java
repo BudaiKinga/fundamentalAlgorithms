@@ -7,12 +7,38 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 public class Main
 {
 
     public static void main(String[] args)
     {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        while(!stack.empty()) {
+            System.out.println(stack.pop());
+        }
+
+        List<Integer> listOfFindings = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        int listSize = listOfFindings.size();
+        System.out.println("List size: " + listSize);
+        int startIndex = 0;
+        int batchSize = 3;
+        int endIndex;
+        while (startIndex < listSize) {
+            endIndex = startIndex + batchSize;
+            if (endIndex > listSize) {
+                endIndex = listSize;
+            }
+            List<Integer> elems = listOfFindings.subList(startIndex, endIndex);
+            System.out.println(elems);
+            startIndex = endIndex;
+        }
+
+
         Set<Integer> intsHashSet = new HashSet<>();
         intsHashSet.add(9);
         intsHashSet.add(8);
