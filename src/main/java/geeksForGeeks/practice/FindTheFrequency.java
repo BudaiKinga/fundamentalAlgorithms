@@ -1,4 +1,4 @@
-package geeksForGeeks;
+package geeksForGeeks.practice;
 
 import java.util.Arrays;
 import java.util.List;
