@@ -16,6 +16,7 @@ public class GenerateBinaryString {
         Scanner sc = new Scanner(System.in);
         int nrTest = sc.nextInt();
         for (int i = 0; i < nrTest; i++) {
+            results = new LinkedList<>();
             String input = sc.next();
             generate(input);
             print();
@@ -24,24 +25,13 @@ public class GenerateBinaryString {
 
     public static void generate(String input) {
         int regex = -1;
-        int last = 0;
-        while ((regex = input.indexOf("?", last)) > 0) {
-            String first = input.substring(last, regex);
+        while ((regex = input.indexOf("?")) >= 0) {
+            String first = input.substring(0, regex);
             addToResults(first);
             addToResults();
-            input = input.substring(regex);
+            input = input.substring(regex + 1);
         }
-
-
-//        for (int i = 0; i < input.length(); i++) {
-//            char c = input.charAt(i);
-//            if (c == '?') {
-//                addToResults();
-//            } else {
-//                //add character to every element
-//                addToResults(String.valueOf(c));
-//            }
-//        }
+        addToResults(input);
     }
 
     public static void addToResults() {
