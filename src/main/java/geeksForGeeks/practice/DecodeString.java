@@ -1,6 +1,9 @@
 package geeksForGeeks.practice;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * Created by BudaiK on Mar, 2020.
@@ -16,6 +19,11 @@ public class DecodeString {
     //bcacabcacabcaca
 
     public static void main(String[] args) {
+        int[] ints = {1, 2, 1};
+        List<Integer> res = Arrays.stream(ints).boxed().collect(Collectors.toList()).subList(1,2);
+
+
+
         DecodeString ds = new DecodeString();
 
         String result = ds.decode(INPUT2);
