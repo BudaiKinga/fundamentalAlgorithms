@@ -64,16 +64,19 @@ public class Tarjan
 
     public static void main(String[] args)
     {
-        Tarjan t = new Tarjan(ADJ);
-        Set<List<Integer>> scc = t.buildStrongyConnComponents();
-        for (List<Integer> l : scc)
-        {
-            for (Integer node : l)
-            {
-                System.out.print(node + " ");
-            }
-            System.out.println();
-        }
+        String k = "kinga";
+        k = k.replace("kin", "ga");
+        System.out.println(k);
+//        Tarjan t = new Tarjan(ADJ);
+//        Set<List<Integer>> scc = t.buildStrongyConnComponents();
+//        for (List<Integer> l : scc)
+//        {
+//            for (Integer node : l)
+//            {
+//                System.out.print(node + " ");
+//            }
+//            System.out.println();
+//        }
     }
 
 }

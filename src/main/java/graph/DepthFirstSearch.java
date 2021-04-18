@@ -1,14 +1,7 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
+
 import javafx.util.Pair;
 
 public class DepthFirstSearch
@@ -124,6 +117,7 @@ public class DepthFirstSearch
 
     public static void main(String[] args)
     {
+        packNumbers(Arrays.asList(255,255,3));
         DepthFirstSearch t = new DepthFirstSearch(ADJ2);
         t.dfs();
         for (Pair<Integer, Integer> p : t.getDfsPath())
@@ -140,5 +134,23 @@ public class DepthFirstSearch
     private List<Pair<Integer, Integer>> getDfsPath()
     {
         return dfsPath;
+    }
+
+
+    static List<String> packNumbers(List<Integer> arr) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < arr.size(); i++) {
+            int j = i + 1;
+            while (j < arr.size() && arr.get(j).equals(arr.get(i))) {
+                j++;
+            }
+            if (j > i + 1) {
+                result.add(arr.get(i) + ":" + (j - i));
+            } else {
+                result.add(Integer.toString(arr.get(i)));
+            }
+            i = j - 1;
+        }
+        return result;
     }
 }
